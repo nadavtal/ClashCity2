@@ -8,7 +8,7 @@ import { PlayersComponent } from './players/players.component';
 import { DetailsComponent } from './details/details.component';
 import { BattlesComponent } from './battles/battles.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

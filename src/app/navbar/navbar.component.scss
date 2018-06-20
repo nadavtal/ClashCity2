@@ -1,24 +1,35 @@
-nav {
-    background: #2D2E2E;
-    height: 100%;
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
 
-        li {
+.navbar-dark{
+    background-color: rgb(5, 5, 5);
+    border: 1px solid rgb(230, 142, 43);
+}
 
-            a {
-                color: #fff;
-                padding: 20px;
-                display: block;
-            }
-
-            .activated {
-                background-color: #00a8ff;
-            }
-        }
-    }
+#Navbar{
     
+    /* border: solid white; */
+    
+}
+
+.navbar-nav{
+    
+    /* border: solid rgb(141, 111, 111); */
+}
+
+.nav-item{
+    /* border-bottom: 1px solid lightgray;  */
+    margin: 10px;
+    padding: 2px;
+    font-size: 0.90rem;
+    color: lightcoral;
+    cursor: pointer;
+}
+
+.nav-unit-types{
+    /* border: 1px solid black; */
+    font-size: 1em;
+}
+
+.navbar-text{
+    right: 0px;
 }

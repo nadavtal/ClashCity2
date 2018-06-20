@@ -1,0 +1,18 @@
+.carousel {
+    background:rgb(231, 152, 34);
+    /* border: 3px solid rgb(233, 16, 16); */
+    padding: 0px;
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    /* left: 35%; */
+    width: 50%;
+    left: 25%;
+    height: auto;
+}

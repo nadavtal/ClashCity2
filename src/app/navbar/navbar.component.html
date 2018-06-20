@@ -1,4 +1,58 @@
-<nav>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+  <div class='container'>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <img class="logo" src='images\clashlogo.jpg'>
+      <div class="row collapse navbar-collapse " id="Navbar">
+          <div class="col-sm-9">
+              <ul class="navbar-nav">
+                <!-- <li>
+                  <a routerLink="" [class.activated]="currentUrl == '/'">
+                    <i class="material-icons">supervised_user_circle</i>
+                  </a>
+                </li> -->
+                <a routerLink="" [class.activated]="currentUrl == '/'">
+                  <li class="nav-item"><span class='Latest' > home</span></li>
+                </a>
+                  <li class="nav-item"><span class='Latest' > Latest fights</span></li>
+                  <li class="nav-item"><span class='Top'> Top fights</span></li>
+                  <li class="nav-item"><span class='Educational'> Educational videos</span></li> 
+                  <li class="nav-item" id="upload-button"><span class='Upload'> Upload video</span></li>
+              </ul>
+          </div>
+ 
+          <div class="col-sm-3">
+              <ul id="loginMenu" class="navbar-nav">
+                  <li class="nav-item">
+                      <span class="navbar-text">
+                          <a class="" data-toggle="modal" data-target="#signUpModal">
+                          <span class="fa fa-sign-in"></span> Sign up</a>
+                      </span>
+                  </li>
+                  <li class="nav-item">
+                      <span class="navbar-text">
+                          <a routerLink="user-home" [class.activated]="currentUrl == 'user-home'" 
+                          class="" data-toggle="modal" data-target="#loginModal">
+                          <span class="fa fa-bolt"></span> Login</a>
+                      </span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<!-- 
+
+
+<nav id="playerNav">
     <ul>
       <li>
         <a routerLink="" [class.activated]="currentUrl == '/'">
@@ -11,4 +65,4 @@
         </a>
       </li>
     </ul>
-  </nav>
+  </nav> -->

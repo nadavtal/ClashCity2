@@ -1,6 +1,6 @@
-<h1>Users</h1>
+<h2>Online players</h2>
 
-<ul [@listStagger]="users$">
+<ul class="list-unstyled" [@listStagger]="users$">
   <li *ngFor="let user of users$">
     <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
 

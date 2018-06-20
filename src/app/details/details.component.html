@@ -1,9 +1,38 @@
-<div >
-  <h1>{{ user$.name }}</h1>
 
-  <ul>
-    <li><strong>Username:</strong> {{ user$.username }}</li>
-    <li><strong>Email:</strong> {{ user$.email }}</li>
-    <li><strong>Phone:</strong> {{ user$.phone }}</li>
-  </ul>
-</div>
+  <div class="row row-header">
+    <div class="col-sm-2">
+      <h1>{{ user$.name }}</h1>
+
+    </div>
+    <div class="col-5 col-sm-1">
+      <ul class="list-unstyled">
+        <li><strong>Username:</strong></li>
+        <li><strong>Email:</strong></li>
+        <li><strong>Phone:</strong></li>
+      </ul>
+    </div>
+    <div class="col-7 col-sm-5">
+        <ul class="list-unstyled">
+          <li> {{ user$.username }}</li>
+          <li> {{ user$.email }}</li>
+          <li> {{ user$.phone }}</li>
+        </ul>
+      </div>
+    <div class="col-sm-4">
+        <img id="carouselImg2" class="d-block img-fluid" src="\assets\images/clashimg5.jpg" alt="avatar">
+    </div>
+  </div>
+  <div class="row row-content">
+      <div class="col-sm-4">
+        account info
+        
+      </div>
+      <div class="col-sm-4">
+        stats
+      </div>
+      <div class="col-sm-4">
+        <app-players></app-players>
+      </div>
+    </div>
+
+    

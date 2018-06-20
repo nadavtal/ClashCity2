@@ -81,6 +81,8 @@ function addUnitHtml(parentId, list){
 
         }
     }
+
+
 addUnitHtml('groundList', unitsByType.ground);
 addUnitHtml('airList', unitsByType.air);
 addUnitHtml('towerList', unitsByType.towers);
@@ -89,22 +91,24 @@ addUnitHtml('spellsList', unitsByType.spells);
 //clones the first video to the 2nd video div
 function addVideoToDisplay(){
     var itm = document.getElementById("video");
-    
+    // console.log(itm)
     var cln = itm.cloneNode(true);
-    console.log(cln); 
+    // console.log(cln); 
+    // alert('here')
     var videos = document.getElementById("videos"); 
     videos.insertBefore(cln, videos.childNodes[1]);
-        }
+}
         
-    //dispplay video information    
-    function videoDisplay(video){
-        document.getElementById("myIframe").src = video.link;
-        document.getElementById("tags").innerHTML = video.tags;
-        document.getElementById("rate").innerHTML = video.rate;}
+//dispplay video information    
+function videoDisplay(video){
+    document.getElementById("myIframe").src = video.link;
+    document.getElementById("tags").innerHTML = video.tags;
+    document.getElementById("rate").innerHTML = video.rate;}
 
 
 
-    function playVideosByTag(tag){
+function playVideosByTag(tag){
+    // alert(tag)
     for (x = 0; x < videosList.length; x++){
         var length = videosList[x].tags.length;
         for(y = 0; y < length; y++){
@@ -123,6 +127,7 @@ function getTagFromId(){
     for (i = 0; i < unitIdList.length; i++){
         document.getElementById(unitIdList[i]).onclick = function(){
             var id  = $(this).attr("id");
+            // alert(id)
             playVideosByTag(id);
             return id;
             }

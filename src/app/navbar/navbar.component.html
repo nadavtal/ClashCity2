@@ -35,9 +35,12 @@
                           <a routerLink="/details/:id" [class.activated]="currentUrl == '/details/'" 
                           class="" data-toggle="modal" data-target="#loginModal">
                           <span class="fa fa-bolt"></span> Login</a>
+                          <span class="flex-spacer"></span>
+                             <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login</a>
                       </span>
                   </li>
               </ul>
+              
           </div>
       </div>
   </div>
@@ -126,7 +129,38 @@
     </div>
 </div>
 
+<div class='upload-form hide'>
+    <div class='container'>
+        <form>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4 class="unit ">Link:</h4>
+                    <input class='username' placeholder="paste embed link here"/>
+                </div>
+                <div class="col-sm-7">
+                    <h4 class="unit">units</h4>
+                    <ul class="list-unstyled">
+                        <div id="uploadTagCheckboxes">
+                            <form class="list-unstyled">
 
+                            </form>
+                            <form autocomplete="off" action="/action_page.php">
+                                <div class="autocomplete" style="width:300px;">
+                                  <input id="myInput" type="text" name="unitName" placeholder="type units that are in the video">
+                                </div>
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </ul>
+                    
+                </div>
+                <div class="col-sm-2">
+                    <input class='create' type='submit' value='Upload' />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 

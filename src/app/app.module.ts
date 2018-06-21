@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserNavComponent } from './user-nav/user-nav.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UserNavComponent } from './user-nav/user-nav.component';
     VideoRcommendationsComponent,
     CarousellComponent,
     UserHomeComponent,
-    UserNavComponent
+    UserNavComponent,
+    LoginComponent
 
 
   ],

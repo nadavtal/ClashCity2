@@ -1,23 +1,63 @@
 
-  <header class="jumbotron jumbotron-fluid">
+  <header class="jumbotron jumbotron-fluid gradient">
       <div class="row row-header">
-          <div class="col-12 col-sm-2">
-              <h1>Clash College</h1>
-              <p>Pick a unit or find videos by combos</p>
+          <div class="col-12 col-sm-2 ">
+              <h1><strong>CLASH</strong> College</h1>
+              <p>find clash videos by choosing a unit or combo</p>
           </div>
-          <div class="col-12 col-sm-1">
+          <div class="col-12 col-sm-2">
               <div class="">
-                  <span class='ground nav-item nav-unit-types'>Ground</span><br>
-                  <span class='air nav-item nav-unit-types'>Air</span><br>
-                  <span class='towers nav-item nav-unit-types'>Towers</span><br>
-                  <span class='spells nav-item nav-unit-types'>Spells</span><br>
+                    <div class="button v18 ground">
+                        <span class='label nav-item nav-unit-types'>Ground</span><br>
+                        <span class="icon">
+                            <span></span>
+                        </span>
+                        <span class="icon2">
+                        </span>
+                    </div>
+                    <div class="button v18 air">
+                        <span class='label nav-item nav-unit-types'>Air</span><br>
+                        <span class="icon">
+                            <span></span>
+                        </span>
+                        <span class="icon2">
+                        </span>
+                    </div>
+                    <div class="button v18 towers">
+                        <span class='label towers nav-item nav-unit-types'>Towers</span><br>
+                        <span class="icon">
+                            <span></span>
+                        </span>
+                        <span class="icon2">
+                        </span>
+                    </div>
+                    <div class="button v18 spells">
+                        <span class='label nav-item nav-unit-types'>Spells</span><br>
+                        <span class="icon">
+                            <span></span>
+                        </span>
+                        <span class="icon2">
+                        </span>
+                    </div>                  
+                  
+                  <!-- <span class='towers nav-item nav-unit-types'>Towers</span><br>
+                  <span class='spells nav-item nav-unit-types'>Spells</span><br> -->
               </div>
           </div>
-          <div class="col-12 col-sm-8">
+          <div class="col-12 col-sm-6">
               <form id="checkboxForm">
                   <div class="combo-menu" id="combo-dropdown">
                        <ul class="list-unstyled">
                           <div class='ground-menu hide' id="ground-dropdown">
+                                
+                            <div class="inputGroup">
+                                <input id="wer" name="wer" type="checkbox"/>
+                                <label for="wer">Option One</label>
+                            </div>
+                            <div class="inputGroup">
+                                <input id="zxc" name="zxc" type="checkbox"/>
+                                <label for="zxc">Option One</label>
+                            </div>
                               <form id="ground-unit-form">
                                       
                               </form>
@@ -40,10 +80,11 @@
                       </ul>
                   </div>
               </form>
-            <div class="col-12 col-sm">
-                <input id="submit" class="btn" type="submit" value="Find videos" onsubmit="">
-            </div>
-          </div>  
+          </div>
+          <div class="col-12 col-sm-2">
+            <input id="submit" class="btn" type="submit" value="Find videos" onsubmit="">
+          </div>
+           
       </div>        
   </header>
 

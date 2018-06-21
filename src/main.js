@@ -15,7 +15,7 @@ function User(first, last, email, pw) {
     this.last = last;
     this.email = email;
     this.pw = pw;
-    this.wins = 0
+    this.wins = 0;
     this.losses = 0;
     this.balance = 0
 }
@@ -71,16 +71,30 @@ function addUnitHtml(parentId, list){
     var parent = document.getElementById(parentId);
     
     for(i = 0; i < list.length; i++){
-        inputId = list[i]
-        var li = document.createElement('li')
-        li.setAttribute('class', 'nav-item')
-        li.setAttribute('id', inputId)
-        parent.appendChild(li)
-        
-        li.innerHTML = list[i];
-
-        }
-    }
+        inputId = list[i];
+        var li = document.createElement('li');
+        li.setAttribute('id', inputId);
+        // li.setAttribute('class', '');
+        var div = document.createElement('div');
+        div.setAttribute('class', 'nav-item');
+        var span = document.createElement('span');
+        span.setAttribute('class', 'label');
+        span.innerHTML = list[i];
+        div.appendChild(span);
+        var span1 = document.createElement('span');
+        span1.setAttribute('class', 'icon');
+        var span2 = document.createElement('span');
+        span1.appendChild(span2);
+        div.appendChild(span1);
+        var span3 = document.createElement('span');
+        span3.setAttribute('class', 'icon2');
+        div.appendChild(span3);
+        li.appendChild(div);
+        // console.log(li);
+        parent.appendChild(li);
+      
+        };
+    };
 
 
 addUnitHtml('groundList', unitsByType.ground);
@@ -103,7 +117,8 @@ function addVideoToDisplay(){
 function videoDisplay(video){
     document.getElementById("myIframe").src = video.link;
     document.getElementById("tags").innerHTML = video.tags;
-    document.getElementById("rate").innerHTML = video.rate;}
+    document.getElementById("rate").innerHTML = video.rate;
+}
 
 
 
@@ -146,7 +161,7 @@ function openClose(source, event, target){
     //   $(source).animate({
     //       fontSize: '24px',}, 500)
   
-    })
+    });
   };
 openClose('#login-button', 'click','.login-form');
 openClose('#upload-button', 'click','.upload-form');
@@ -162,34 +177,41 @@ function createCombocheckBoxMenu(parentId, list, idAdd){
     for(i = 0; i < list.length; i++){
         inputId = list[i] + '-' + idAdd;
 
-        html = '<input id="' + inputId + '" ' + 'type="checkbox" value= "' + list[i] + '" '+ '/>' + list[i] 
-
-        var li = document.createElement('li')
-        li.style.float = "left"
-        li.style.fontSize = "0.9em"
-        li.style.padding = '7px'
-        var liId = inputId + 'li'
-        li.setAttribute('id', liId);
-        parent.appendChild(li);
-        li.innerHTML = html;
+        html = '<input id="' + inputId + '" name="' + inputId +'" type="checkbox"'+ '/>'; 
+        var div = document.createElement('div');
+        div.setAttribute('class', 'inputGroup');
+        
+        div.innerHTML = html;
+        // div.appendChild(li);
+        var label = document.createElement('label');
+        label.setAttribute('for', inputId);
+        label.innerHTML = list[i];
+        div.appendChild(label); 
+        console.log(parent);   
+        div.style.float = "left";
+        // li.style.fontSize = "0.9em";
+        div.style.padding = '7px';
+        // var liId = inputId + 'li';
+        // li.setAttribute('id', liId);
+        parent.appendChild(div);
         
     }
 }
 
-createCombocheckBoxMenu('ground-dropdown', unitsByType.ground,'button')
-createCombocheckBoxMenu('air-dropdown', unitsByType.air,'button')
-createCombocheckBoxMenu('towers-dropdown', unitsByType.towers,'button')
-createCombocheckBoxMenu('spells-dropdown', unitsByType.spells,'button')
+createCombocheckBoxMenu('ground-dropdown', unitsByType.ground,'button');
+createCombocheckBoxMenu('air-dropdown', unitsByType.air,'button');
+createCombocheckBoxMenu('towers-dropdown', unitsByType.towers,'button');
+createCombocheckBoxMenu('spells-dropdown', unitsByType.spells,'button');
 
 
 //get tags from checkbox checked
 function getTags(){
-    var tags = []
+    var tags = [];
     var radios = document.getElementById('checkboxForm');
     length = radios.length;
     for (var i = 0;  i < length; i++){
         if (radios[i].checked){
-            tags.push(radios[i].value)
+            tags.push(radios[i].value);
            }
     }
   
@@ -206,7 +228,7 @@ function arrayContainsAnotherArray(needle, haystack){
             break;
         }
     }
-    return true
+    return true;
   }
 
 
@@ -214,15 +236,15 @@ function arrayContainsAnotherArray(needle, haystack){
 // find relevant videos by tag list
 function playVideosByTags(tagsList){
     // alert(tagsList)
-    var videos = []
+    var videos = [];
     for (i = 0; i < videosList.length; i++){
         if (arrayContainsAnotherArray(tagsList, videosList[i].tags)){
-            alert('yayyy')
-            video = videosList[i]
+            // alert('yayyy');
+            video = videosList[i];
             videos.push(video);
             addVideoToDisplay();
             videoDisplay(video);
-            return true
+            return true;
         }
     }
     if (videos.length === 0){
@@ -245,7 +267,7 @@ function onMouseOverUnit(){
                 });
         // $(event.currentTarget).animate({
         //     fontSize: '24px',}, 100)
-      })
+      });
     
       $('.nav-item').on('mouseleave', event => {
           

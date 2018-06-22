@@ -236,13 +236,15 @@ function createCombocheckBoxMenu(parentId, list, idAdd){
 function getTags(){
     var tags = [];
     var radios = document.getElementById('checkboxForm');
+    // console.log(radios[1])
     length = radios.length;
+    // console.log(length)
     for (var i = 0;  i < length; i++){
         if (radios[i].checked){
             tags.push(radios[i].value);
            }
     }
-  
+    alert(tags);
     return tags
 }
 
@@ -281,9 +283,11 @@ function playVideosByTags(tagsList){
 }
 
 //submit checkboxes 
-document.getElementById('submit').onclick = function(){
+document.getElementById('findVideo').onclick = function(){
+    // alert("here")
     var tags = getTags();
     playVideosByTags(tags);
+    return false;
 }
 
 

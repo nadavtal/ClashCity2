@@ -1,11 +1,7 @@
 import { Unit } from './unit';
 
-var units: string[] = ["3musketeers", "battle_ramp", "magic_archer", "sparky", "executioner", "pekka", "prince",
-"wizard", "electro", "giant", "golem", "goblins", "goblin_gang", "musketeer", "grave_yard",
- "valkiry", "mega_minion", "ice_golem", "ice_wizard", "bowler", "hog_rider", "skeleton",
- "knight", "lumberjack", "mini_pekka"]
 
- var j:any; 
+//  var j:any; 
  
 //  var unitsArray:Unit[] = []
 //  for(j in units) {
@@ -21,7 +17,7 @@ var units: string[] = ["3musketeers", "battle_ramp", "magic_archer", "sparky", "
 //     console.log(units[j])  
     
 //  }
-export const UNITS: Unit[] = [
+export const GrUNITS: Unit[] = [
     {
     id: 0,
     name: "giant",
@@ -158,14 +154,7 @@ export const UNITS: Unit[] = [
     price: 4,
     description: "asjdnkajsdnkands"
     },
-    {
-    id: 17,
-    name: "mega_minion",
-    image: "",
-    category: "ground",
-    price: 6,
-    description: "asjdnkajsdnkands"
-    },
+    
     {
     id: 18,
     name: "ice_gole",
@@ -223,6 +212,229 @@ export const UNITS: Unit[] = [
     description: "asjdnkajsdnkands"
     },
     
+]
+
+export const AiUNITS: Unit[] = [
+    {
+    id: 25,
+    name: "minion_horde",
+    image: "",
+    category: "air",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 26,
+    name: "Flying_machine",
+    image: "",
+    category: "air",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 27,
+    name: "bats",
+    image: "",
+    category: "air",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 28,
+    name: "mega_minion",
+    image: "",
+    category: "air",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 29,
+    name: "minions",
+    image: "",
+    category: "air",
+    price: 6,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 30,
+    name: "lava",
+    image: "",
+    category: "air",
+    price: 9,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 31,
+    name: "baloon",
+    image: "",
+    category: "air",
+    price: 4,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 32,
+    name: "baby_dragon",
+    image: "",
+    category: "air",
+    price: 4,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 33,
+    name: "inferno_dragon",
+    image: "",
+    category: "air",
+    price: 6,
+    description: "asjdnkajsdnkands"
+    }
+
+
+
+
+]
+
+export const TowUNITS: Unit[] = [
+    {
+    id: 34,
+    name: "inferno_tower",
+    image: "",
+    category: "tower",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 35,
+    name: "bomb_tower",
+    image: "",
+    category: "tower",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 36,
+    name: "canon",
+    image: "",
+    category: "tower",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 37,
+    name: "mortar",
+    image: "",
+    category: "tower",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 38,
+    name: "tombstone",
+    image: "",
+    category: "tower",
+    price: 6,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 39,
+    name: "x_bow",
+    image: "",
+    category: "tower",
+    price: 9,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 40,
+    name: "collector",
+    image: "",
+    category: "tower",
+    price: 4,
+    description: "asjdnkajsdnkands"
+    },
     
     
+    
+    
+
+
+
+
+]
+
+export const SpeUNITS: Unit[] = [
+    {
+    id: 43,
+    name: "log",
+    image: "",
+    category: "spells",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 44,
+    name: "snow_ball",
+    image: "",
+    category: "spells",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 45,
+    name: "fire_ball",
+    image: "",
+    category: "spells",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 46,
+    name: "zap",
+    image: "",
+    category: "spells",
+    price: 5,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 47,
+    name: "clone",
+    image: "",
+    category: "spells",
+    price: 6,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 48,
+    name: "freeze",
+    image: "",
+    category: "spells",
+    price: 9,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 49,
+    name: "rage",
+    image: "",
+    category: "spells",
+    price: 4,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 50,
+    name: "poison",
+    image: "",
+    category: "spells",
+    price: 4,
+    description: "asjdnkajsdnkands"
+    },
+    {
+    id: 51,
+    name: "mirror",
+    image: "",
+    category: "spells",
+    price: 6,
+    description: "asjdnkajsdnkands"
+    }
+
+
+
+
 ]

@@ -15,6 +15,21 @@
     // border: 1px solid black;
 }
 
+.modal-header{
+  background:
+      radial-gradient(
+        circle,
+        rgb(34, 27, 20),
+        #110e0b
+      );
+
+}
+
+.modal-body{
+  background: radial-gradient(circle, darken(rgb(122, 144, 204), 10%), #699eee, #276a7e, rgb(224, 171, 171)); 
+
+}
+
 
 .inputGroup {
     background-color: rgb(235, 222, 222);

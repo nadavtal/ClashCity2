@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Unit } from './shared/unit';
-import { UNITS } from './shared/units';
+import { GrUNITS } from './shared/units';
+import { AiUNITS } from './shared/units';
+import { TowUNITS } from './shared/units';
+import { SpeUNITS } from './shared/units';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +25,20 @@ export class DataService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts')
   }
 
-  getUnits(): Unit[] {
-    return UNITS;
+  getGrUnits(): Unit[] {
+    return GrUNITS;
+  }
+
+  getAiUnits(): Unit[] {
+    return AiUNITS;
+  }
+
+  getSpeUnits(): Unit[] {
+    return SpeUNITS;
+  }
+
+  getTowUnits(): Unit[] {
+    return TowUNITS;
   }
   
 }

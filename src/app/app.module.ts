@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserNavComponent } from './user-nav/user-nav.component';
 import { LoginComponent } from './login/login.component';
+// import { UnitsComponent } from './units/units.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     CarousellComponent,
     UserHomeComponent,
     UserNavComponent,
-    LoginComponent
+    LoginComponent,
+    
 
 
   ],

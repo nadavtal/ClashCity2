@@ -55,7 +55,7 @@ var unitIdList = ["pekka", "prince", "wizard", "electro", "golem", "goblins", "g
 
 
  var unitsByType = {ground: ["3musketeers", "battle_ramp", "magic_archer", "sparky", "executioner", "pekka", "prince",
-                            "wizard", "electro", "golem", "goblins", "goblin_gang", "musketeer", "grave_yard",
+                            "wizard", "electro", "giant", "golem", "goblins", "goblin_gang", "musketeer", "grave_yard",
                              "valkiry", "mega_minion", "ice_golem", "ice_wizard", "bowler", "hog_rider", "skeleton",
                              "knight", "lumberjack", "mini_pekka", ],
                    air: ["InfernoDragon", "Flying_machine", "baby_dragon", "minion Horde", "minions", "lava",

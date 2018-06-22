@@ -44,20 +44,21 @@
                   <span class='spells nav-item nav-unit-types'>Spells</span><br> -->
               </div>
           </div>
-          <div class="col-12 col-sm-6">
+          <div class="col-12 col-sm-7 checkBoxHeader">
               <form id="checkboxForm">
                   <div class="combo-menu" id="combo-dropdown">
                        <ul class="list-unstyled">
                           <div class='ground-menu hide' id="ground-dropdown">
-                                
-                            <div class="inputGroup">
-                                <input id="wer" name="wer" type="checkbox" value=""/>
-                                <label for="wer">Option One</label>
-                            </div>
-                            <div class="inputGroup">
-                                <input id="zxc" name="zxc" type="checkbox"/>
-                                <label for="zxc">Option One</label>
-                            </div>
+                            <ul class="list-unstyled">
+                                <!-- <p>{{ units }}</p> -->
+                                <li *ngFor="let unit of units">
+                                    <div class="inputGroup">
+                                        <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" type="checkbox" value=""/>
+                                        <label for="{{ unit.name }}CB">{{ unit.name }}</label>
+                                    </div>
+                                </li>
+                            </ul>
+                          
                               <form id="ground-unit-form">
                                       
                               </form>
@@ -81,8 +82,8 @@
                   </div>
               </form>
           </div>
-          <div class="col-12 col-sm-2">
-            <input id="submit" class="btn" type="submit" value="Find videos" onsubmit="">
+          <div class="col-12 col-sm-1">
+            <input id="submit" class="btn btn-success" type="submit" value="Find videos" onsubmit="">
           </div>
            
       </div>        

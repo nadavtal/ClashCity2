@@ -1,6 +1,6 @@
 
 $(document).ready(() => {
-    console.log("here");
+    console.log("main.js readu");
 localStorage.clear();
 
 var users = [{ first: 'Nadav', last: 'Almagor', email: "nadav@gmail.com", pw: '1234', wins: 5, losses: 2, balance: 2000},
@@ -8,7 +8,7 @@ var users = [{ first: 'Nadav', last: 'Almagor', email: "nadav@gmail.com", pw: '1
              { first: 'Gadi', last: 'Gross', email: "gadi@gmail.com", pw: '2345', wins: 1, losses: 7, balance: -465},
             ]   
 
-console.table(users);
+// console.table(users);
 
 function User(first, last, email, pw) {
     this.first = first;
@@ -64,7 +64,35 @@ var unitIdList = ["pekka", "prince", "wizard", "electro", "golem", "goblins", "g
                    spells: ["mirror", "poison", "fire_ball", "zap", "rage","rocket", "log", "freeze", "tornado", "duplicate", ]
                    }
 
+function createUnitObject(name, category, id) {
+    var unitObj = {
+        'id': id,
+        'name': name,
+        'image': '',
+        'category': category,
+        'price': 0,
+        'description': ""
+        }
+    return unitObj;
+}
 
+function createUNITSarray() {
+    console.log(unitsByType.ground.length)
+    var UNITS = [];
+    for (i = 0; i < unitsByType.ground.length; i++){
+        console.log("here")
+        var name = unitsByType.ground[i];
+        console.log(name);
+        var newObj = createUnitObject(name, "ground", i);
+        console.log(newObj);
+        UNITS.push(newObj);
+        
+    }return UNITS;
+}
+// createUNITSarray();
+
+// var unit = createUnitObject("knight", "ground", 3)
+// console.log(unit)
 
 //creates html lists of units in a designated element
 function addUnitHtml(parentId, list){
@@ -198,10 +226,10 @@ function createCombocheckBoxMenu(parentId, list, idAdd){
     }
 }
 
-createCombocheckBoxMenu('ground-dropdown', unitsByType.ground,'button');
-createCombocheckBoxMenu('air-dropdown', unitsByType.air,'button');
-createCombocheckBoxMenu('towers-dropdown', unitsByType.towers,'button');
-createCombocheckBoxMenu('spells-dropdown', unitsByType.spells,'button');
+// createCombocheckBoxMenu('ground-dropdown', unitsByType.ground,'button');
+// createCombocheckBoxMenu('air-dropdown', unitsByType.air,'button');
+// createCombocheckBoxMenu('towers-dropdown', unitsByType.towers,'button');
+// createCombocheckBoxMenu('spells-dropdown', unitsByType.spells,'button');
 
 
 //get tags from checkbox checked
@@ -278,7 +306,7 @@ function onMouseOverUnit(){
         // $(event.currentTarget).animate({
         //     fontSize: '18px',
         //      }, 100)
-      })
+      });
     };
 onMouseOverUnit();
 
@@ -416,7 +444,7 @@ document.getElementById('loginButton').onclick = function(){
     var pw = getVariablesFromInput('exampleInputPassword2');
 
     if (email === ''){
-        alert("please enter email")
+        alert("please enter email");
     }
     
     for (i = 0; i < users.length; i++){
@@ -428,10 +456,10 @@ document.getElementById('loginButton').onclick = function(){
                 break
             }
             else{
-                alert("pass word doesnt match the email")
+                alert("pass word doesnt match the email");
                 }
         }else{
-            alert("Email doesn't exist")
+            alert("Email doesn't exist");
             }
     }
     // localStorage.setItem('first', user.first);

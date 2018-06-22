@@ -35,7 +35,9 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./src/main.js"
+              "./src/main.js",
+              "./mysqlScript.js"
+              // "./src/app/shared/data.js"
             ]
           },
           "configurations": {

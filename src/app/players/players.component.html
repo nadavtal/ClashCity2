@@ -2,7 +2,7 @@
 
 <ul class="list-unstyled" [@listStagger]="users$">
   <li *ngFor="let user of users$">
-    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    <a href="/details/{{user.id}}">{{ user.name }}</a>
 
     <!-- <ul>
       <li>{{ user.email }}</li>

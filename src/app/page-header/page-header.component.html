@@ -5,7 +5,7 @@
           <div class="col-12 col-sm-4 ">
               <h1><strong>CLASH</strong> College</h1>
               <!-- <p>find clash videos by choosing a unit or combo</p> -->
-              <h2><a data-toggle="modal" data-target="#CbModal">Find combo</a></h2>
+              <h2 class="findCombo"><a data-toggle="modal" data-target="#CbModal">Find combo</a></h2>
           </div>
           <div class="col-12 col-sm-8">
                 <app-carousell></app-carousell>
@@ -51,32 +51,34 @@
                     <div class="modal-header">
                         <h3 class="modal-title">Create combo </h3>
                         
-                        <div class="button v18 ground">
-                            <span class='label nav-item nav-unit-types'>Ground</span><br>
+                        <div class="button v18 groundMenu nav-item">
+                            <span id="groundModal" class='label ground Gmenu '>Ground</span><br>
                             <span class="icon">
                                 <span></span>
                             </span>
                             <span class="icon2">
                             </span>
                         </div>
-                        <div class="button v18 air">
-                            <span class='label nav-item nav-unit-types'>Air</span><br>
+                        <div class="button v18 airMenu ">
+                            <div class="nav-item">
+                                <span class='label air Amenu'>Air</span><br>
+                                <span class="icon">
+                                    <span></span>
+                                </span>
+                                <span class="icon2">
+                                </span>
+                            </div>  
+                        </div>
+                        <div class="button v18 towersMenu nav-item">
+                            <span class='label towers Tmenu'>Towers</span><br>
                             <span class="icon">
                                 <span></span>
                             </span>
                             <span class="icon2">
                             </span>
                         </div>
-                        <div class="button v18 towers">
-                            <span class='label towers nav-item nav-unit-types'>Towers</span><br>
-                            <span class="icon">
-                                <span></span>
-                            </span>
-                            <span class="icon2">
-                            </span>
-                        </div>
-                        <div class="button v18 spells">
-                            <span class='label nav-item nav-unit-types'>Spells</span><br>
+                        <div class="button v18 spellsMenu  nav-item">
+                            <span class='label spells Smenu'>Spells</span><br>
                             <span class="icon">
                                 <span></span>
                             </span>
@@ -86,28 +88,28 @@
                     </div>
                     <div class="modal-body">
                         <form id="checkboxForm">
-                            <ul class="list-unstyled">
+                            <ul id="checkBoxContainer" class="list-unstyled">
                                 <!-- <p>{{ units }}</p> -->
                                 <li *ngFor="let unit of grUnits">
-                                    <div class="inputGroup">
-                                        <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" type="checkbox" value="{{ unit.name }}"/>
-                                        <label for="{{ unit.name }}CB">{{ unit.name }}</label>
+                                    <div class="inputGroup ground nav-item">
+                                        <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" class="" type="checkbox" value="{{ unit.name }}"/>
+                                        <label class="" for="{{ unit.name }}CB">{{ unit.name }}</label>
                                     </div>
                                 </li>
                                 <li *ngFor="let unit of aiUnits">
-                                    <div class="inputGroup">
+                                    <div class="inputGroup air nav-item">
                                         <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" type="checkbox" value="{{ unit.name }}"/>
                                         <label for="{{ unit.name }}CB">{{ unit.name }}</label>
                                     </div>
                                 </li>
                                 <li *ngFor="let unit of towUNITS">
-                                    <div class="inputGroup">
+                                    <div class="inputGroup towers nav-item">
                                         <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" type="checkbox" value="{{ unit.name }}"/>
                                         <label for="{{ unit.name }}CB">{{ unit.name }}</label>
                                     </div>
                                 </li>
-                                <li *ngFor="let unit of speUnits">
-                                    <div class="inputGroup">
+                                <li *ngFor="let unit of speUNITS">
+                                    <div class="inputGroup spells nav-item">
                                         <input id="{{ unit.name }}CB" name="{{ unit.name }}CB" type="checkbox" value="{{ unit.name }}"/>
                                         <label for="{{ unit.name }}CB">{{ unit.name }}</label>
                                     </div>

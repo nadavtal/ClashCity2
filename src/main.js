@@ -1,3 +1,4 @@
+// import { DataService } from '/data.service'
 
 $(document).ready(() => {
     console.log("main.js readu");
@@ -184,19 +185,19 @@ function openClose(source, event, target){
     $(source).on(event, () => {
       $(target).toggle();
       $(source).css({
-              color: '#C3FF00',
+            //   color: '#C3FF00',
               });
     //   $(source).animate({
     //       fontSize: '24px',}, 500)
   
     });
   };
-openClose('#login-button', 'click','.login-form');
-openClose('#upload-button', 'click','.upload-form');
-openClose('.ground', 'click','.ground-menu');
-openClose('.air', 'click','.air-menu');
-openClose('.towers', 'click','.towers-menu');
-openClose('.spells', 'click','.spells-menu');
+// openClose('#login-button', 'click','.login-form');
+// openClose('#upload-button', 'click','.upload-form');
+// openClose('.ground', 'click','.ground-menu');
+// openClose('.air', 'click','.air-menu');
+// openClose('.towers', 'click','.towers-menu');
+// openClose('.spells', 'click','.spells-menu');
 
 //creates checkbox menu from the list
 function createCombocheckBoxMenu(parentId, list, idAdd){
@@ -290,26 +291,53 @@ document.getElementById('findVideo').onclick = function(){
     return false;
 }
 
+function onMouseOverCategory(){
+   
+        $('.groundMenu').hover(
+            
+            // function(){ $('.groundModal').addClass('hilighted') },
+            function(){ $('.ground').addClass('hilighted')},
+            function(){ $('.ground').removeClass('hilighted') },
+        );
+        $('.airMenu').hover(
+        
+            // function(){ $('.groundModal').addClass('hilighted') },
+            function(){ $('.air').addClass('hilighted')},
+            function(){ $('.air').removeClass('hilighted') }
+        );
+        $('.towersMenu').hover(
+        
+            // function(){ $('.groundModal').addClass('hilighted') },
+            function(){ $('.towers').addClass('hilighted')},
+            function(){ $('.towers').removeClass('hilighted') }
+        );
+        $('.spellsMenu').hover(
+        
+            // function(){ $('.groundModal').addClass('hilighted') },
+            function(){ $('.spells').addClass('hilighted')},
+            function(){ $('.spells').removeClass('hilighted') }
+        );
+        } 
+    
+onMouseOverCategory();
 
 function onMouseOverUnit(){
     $('.nav-item').on('mouseenter', event => {
-        $(event.currentTarget).css({
-                color: '#C3FF00',
-                //background-color: '#999999'
-                });
-        // $(event.currentTarget).animate({
-        //     fontSize: '24px',}, 100)
+        $(event.currentTarget).addClass("hilighted"),
+                
+        $(event.currentTarget).animate({
+            fontSize: '120%',}, 100);
       });
     
       $('.nav-item').on('mouseleave', event => {
-          
+        $(event.currentTarget).removeClass("hilighted"),  
         $(event.currentTarget).css({
                 color: 'lightcoral',
     
                 });
-        // $(event.currentTarget).animate({
-        //     fontSize: '18px',
-        //      }, 100)
+        $(event.currentTarget).animate({
+            fontSize: '100%',
+             }, 100);
       });
     };
 onMouseOverUnit();
@@ -443,7 +471,9 @@ document.getElementById('signUpButton').onclick = function(){
 
 //when login button is clicked
 document.getElementById('loginButton').onclick = function(){
-    
+    alert('here');
+    // var users = DataService.getUsers();
+    console.log(users);
     var email = getVariablesFromInput('exampleInputEmail2');
     var pw = getVariablesFromInput('exampleInputPassword2');
 
@@ -461,10 +491,10 @@ document.getElementById('loginButton').onclick = function(){
             }
             else{
                 alert("pass word doesnt match the email");
-                }
+                };
         }else{
             alert("Email doesn't exist");
-            }
+            };
     }
     // localStorage.setItem('first', user.first);
     // localStorage.setItem('last', user.last);

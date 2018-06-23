@@ -27,10 +27,6 @@ body {
    }
 
 
-.container{
-    /* border: 5px solid black; */
-}
-
 a:link {
     text-decoration: none;
     color: black;
@@ -82,7 +78,6 @@ background: -webkit-linear-gradient(#333, #eee);
 p{
     padding: 10px
 }
-
 
 
 .row-content{
@@ -177,6 +172,7 @@ iframe{
 .list-unstyled{
     /* border: solid black; */
     padding: 0px;
+    cursor: pointer;
 }
 
 

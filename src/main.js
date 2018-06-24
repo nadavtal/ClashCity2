@@ -1,7 +1,7 @@
 // import { DataService } from '/data.service'
 
 $(document).ready(() => {
-    console.log("main.js readu");
+    console.log("main.js ready  ");
 localStorage.clear();
 
 var users = [{ first: 'Nadav', last: 'Almagor', email: "nadav@gmail.com", pw: '1234', wins: 5, losses: 2, balance: 2000},
@@ -65,7 +65,8 @@ var unitIdList = ["pekka", "prince", "wizard", "electro", "golem", "goblins", "g
                    spells: ["mirror", "poison", "fire_ball", "zap", "rage","rocket", "log", "freeze", "tornado", "duplicate", ]
                    }
 
-function createUnitObject(name, category, id) {
+
+                   function createUnitObject(name, category, id) {
     var unitObj = {
         'id': id,
         'name': name,
@@ -77,23 +78,24 @@ function createUnitObject(name, category, id) {
     return unitObj;
 }
 
-function createUNITSarray() {
-    console.log(unitsByType.ground.length)
+//creates an array of Unit objects from a data list
+function createUNITSarray(list) {
+    // console.log(list.length)
     var UNITS = [];
-    for (i = 0; i < unitsByType.ground.length; i++){
-        console.log("here")
-        var name = unitsByType.ground[i];
-        console.log(name);
+    for (i = 0; i < list.length; i++){
+        // console.log("here")
+        var name = list[i];
+        // console.log(name);
         var newObj = createUnitObject(name, "ground", i);
-        console.log(newObj);
+        // console.log(newObj);
         UNITS.push(newObj);
         
-    }return UNITS;
+    }
+    // console.log(UNITS);
+    return UNITS;
 }
-// createUNITSarray();
+createUNITSarray(unitsByType.ground);
 
-// var unit = createUnitObject("knight", "ground", 3)
-// console.log(unit)
 
 //creates html lists of units in a designated element
 function addUnitHtml(parentId, list){
@@ -131,7 +133,7 @@ addUnitHtml('airList', unitsByType.air);
 addUnitHtml('towerList', unitsByType.towers);
 addUnitHtml('spellsList', unitsByType.spells);
 
-//clones the first video to the 2nd video div
+//clones the first "video" div to the 2nd video div
 function addVideoToDisplay(){
     var itm = document.getElementById("video");
     // console.log(itm)
@@ -149,8 +151,7 @@ function videoDisplay(video){
     document.getElementById("rate").innerHTML = video.rate;
 }
 
-
-
+//finds videos that have this tag among other tags
 function playVideosByTag(tag){
     // alert(tag)
     for (x = 0; x < videosList.length; x++){
@@ -166,7 +167,7 @@ function playVideosByTag(tag){
     }
 };
 
-//get tag(id) from clicking on a unit in the menus
+//get tag(id) from clicking on a unit in the menus.
 function getTagFromId(){
     for (i = 0; i < unitIdList.length; i++){
         document.getElementById(unitIdList[i]).onclick = function(){
@@ -199,7 +200,7 @@ function openClose(source, event, target){
 // openClose('.towers', 'click','.towers-menu');
 // openClose('.spells', 'click','.spells-menu');
 
-//creates checkbox menu from the list
+//creates checkbox menu of from a given list
 function createCombocheckBoxMenu(parentId, list, idAdd){
     var parent = document.getElementById(parentId);
     // console.log(parent);
@@ -264,8 +265,10 @@ function arrayContainsAnotherArray(needle, haystack){
 
 
   
-// find relevant videos by tag list
-function playVideosByTags(tagsList){
+
+  // find relevant videos by tag list
+
+  function playVideosByTags(tagsList){
     // alert(tagsList)
     var videos = [];
     for (i = 0; i < videosList.length; i++){
@@ -283,19 +286,21 @@ function playVideosByTags(tagsList){
     }    
 }
 
-//submit checkboxes 
-document.getElementById('findVideo').onclick = function(){
-    // alert("here")
-    var tags = getTags();
-    playVideosByTags(tags);
-    return false;
-}
+//submit checkboxes & play video
+function getTagsPlayVideo(){
+    document.getElementById('findVideo').onclick = function(){
+        // alert("here")
+        var tags = getTags();
+        playVideosByTags(tags);
+        return false;
+    }
+} 
+getTagsPlayVideo()
 
+//when mouse over unit categories
 function onMouseOverCategory(){
    
         $('.groundMenu').hover(
-            
-            // function(){ $('.groundModal').addClass('hilighted') },
             function(){ $('.ground').addClass('hilighted')},
             function(){ $('.ground').removeClass('hilighted') },
         );
@@ -321,6 +326,7 @@ function onMouseOverCategory(){
     
 onMouseOverCategory();
 
+//when mouse over unit
 function onMouseOverUnit(){
     $('.nav-item').on('mouseenter', event => {
         $(event.currentTarget).addClass("hilighted"),
@@ -450,63 +456,69 @@ function getVariablesFromInput(id){
 }
 
 //when sign up button is clicked
-document.getElementById('signUpButton').onclick = function(){
-    var first = getVariablesFromInput('firstName');
-    var last = getVariablesFromInput('lastName');
-    var email = getVariablesFromInput('exampleInputEmail3');
-    var pw = getVariablesFromInput('exampleInputPassword3');
-    var newUser = new User(first, last, email, pw);
-    // localStorage.setItem('user', newUser);
-    // localStorage.setItem('first', first);
-    // localStorage.setItem('last', last);
-    // localStorage.setItem('email', email);
-    // localStorage.setItem('pw', pw);
-    // localStorage.setItem('wins', 0);
-    // localStorage.setItem('losses', 0);
-    // localStorage.setItem('balance', 0);
-    users.push(newUser);
-    localStorage.setItem('user',JSON.stringify(newUser));
-    console.table(users);
+function signUp(){
+    document.getElementById('signUpButton').onclick = function(){
+        var first = getVariablesFromInput('firstName');
+        var last = getVariablesFromInput('lastName');
+        var email = getVariablesFromInput('exampleInputEmail3');
+        var pw = getVariablesFromInput('exampleInputPassword3');
+        var newUser = new User(first, last, email, pw);
+        console.log(newUser);
+        // localStorage.setItem('user', newUser);
+        // localStorage.setItem('first', first);
+        // localStorage.setItem('last', last);
+        // localStorage.setItem('email', email);
+        // localStorage.setItem('pw', pw);
+        // localStorage.setItem('wins', 0);
+        // localStorage.setItem('losses', 0);
+        // localStorage.setItem('balance', 0);
+        users.push(newUser);
+        localStorage.setItem('user',JSON.stringify(newUser));
+        console.table(users);
+    }
 }
+signUp();
 
 //when login button is clicked
-document.getElementById('loginButton').onclick = function(){
-    alert('here');
-    // var users = DataService.getUsers();
-    console.log(users);
-    var email = getVariablesFromInput('exampleInputEmail2');
-    var pw = getVariablesFromInput('exampleInputPassword2');
-
-    if (email === ''){
-        alert("please enter email");
-    }
+function login(){
+    document.getElementById('loginButton').onclick = function(){
+        alert('here');
+        // var users = DataService.getUsers();
+        console.log(users);
+        var email = getVariablesFromInput('exampleInputEmail2');
+        var pw = getVariablesFromInput('exampleInputPassword2');
     
-    for (i = 0; i < users.length; i++){
-        if (email === users[i].email){
-            // alert(users[i].email)
-            if (pw === users[i].pw){
-                // alert(users[i].pw)
-                var user = users[i]
-                break
-            }
-            else{
-                alert("pass word doesnt match the email");
+        if (email === ''){
+            alert("please enter email");
+        }
+        
+        for (i = 0; i < users.length; i++){
+            if (email === users[i].email){
+                // alert(users[i].email)
+                if (pw === users[i].pw){
+                    // alert(users[i].pw)
+                    var user = users[i]
+                    break
+                }
+                else{
+                    alert("pass word doesnt match the email");
+                    };
+            }else{
+                alert("Email doesn't exist");
                 };
-        }else{
-            alert("Email doesn't exist");
-            };
+        }
+        // localStorage.setItem('first', user.first);
+        // localStorage.setItem('last', user.last);
+        // localStorage.setItem('email', user.email);
+        // localStorage.setItem('pw', user.pw);
+        // localStorage.setItem('wins', user.wins);
+        // localStorage.setItem('losses', user.losses);
+        // localStorage.setItem('balance', user.balance);
+        localStorage.setItem('user',JSON.stringify(user));
+       
     }
-    // localStorage.setItem('first', user.first);
-    // localStorage.setItem('last', user.last);
-    // localStorage.setItem('email', user.email);
-    // localStorage.setItem('pw', user.pw);
-    // localStorage.setItem('wins', user.wins);
-    // localStorage.setItem('losses', user.losses);
-    // localStorage.setItem('balance', user.balance);
-    localStorage.setItem('user',JSON.stringify(user));
-   
 }
-
+login();
 });
 
 

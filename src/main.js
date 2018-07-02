@@ -97,7 +97,7 @@ function createUNITSarray(list) {
 createUNITSarray(unitsByType.ground);
 
 
-//creates html lists of units in a designated element
+//creates html lists of units in a parentID element
 function addUnitHtml(parentId, list){
     var parent = document.getElementById(parentId);
     
@@ -180,7 +180,7 @@ function getTagFromId(){
     };
 getTagFromId();
 
-//open and close function
+//open the target element by the event happening on source
 function openClose(source, event, target){
     // alert("here")
     $(source).on(event, () => {
@@ -192,15 +192,9 @@ function openClose(source, event, target){
     //       fontSize: '24px',}, 500)
   
     });
-  };
-// openClose('#login-button', 'click','.login-form');
-// openClose('#upload-button', 'click','.upload-form');
-// openClose('.ground', 'click','.ground-menu');
-// openClose('.air', 'click','.air-menu');
-// openClose('.towers', 'click','.towers-menu');
-// openClose('.spells', 'click','.spells-menu');
+};
 
-//creates checkbox menu of from a given list
+//creates checkbox menu in the parentId element from a given list and giving each option the ID of the itme in the list + the 'idadd' 
 function createCombocheckBoxMenu(parentId, list, idAdd){
     var parent = document.getElementById(parentId);
     // console.log(parent);
@@ -228,13 +222,7 @@ function createCombocheckBoxMenu(parentId, list, idAdd){
     }
 }
 
-// createCombocheckBoxMenu('ground-dropdown', unitsByType.ground,'button');
-// createCombocheckBoxMenu('air-dropdown', unitsByType.air,'button');
-// createCombocheckBoxMenu('towers-dropdown', unitsByType.towers,'button');
-// createCombocheckBoxMenu('spells-dropdown', unitsByType.spells,'button');
-
-
-//get tags from checkbox checked
+//get tags from checkbox form that are checked
 function getTags(){
     var tags = [];
     var radios = document.getElementById('checkboxForm');
@@ -251,10 +239,10 @@ function getTags(){
 }
 
 //checks if the combination of checkbox checked exist in video tags
-function arrayContainsAnotherArray(needle, haystack){
-    console.log(needle.length);
-    for(var i = 0; i < needle.length; i++){
-        if(haystack.indexOf(needle[i]) === -1){
+function arrayContainsAnotherArray(tags, tagsArray){
+    // console.log(needle.length);
+    for(var i = 0; i < tags.length; i++){
+        if(tagsArray.indexOf(tags[i]) === -1){
             
             return false;
             break;
@@ -297,46 +285,46 @@ function getTagsPlayVideo(){
 } 
 getTagsPlayVideo()
 
-//when mouse over unit categories
-function onMouseOverCategory(){
+//add & remove class when mouse hover over unit categories
+function onMouseOverCategory(cssClass){
    
         $('.groundMenu').hover(
-            function(){ $('.ground').addClass('hilighted')},
-            function(){ $('.ground').removeClass('hilighted') },
+            function(){ $('.ground').addClass(cssClass)},
+            function(){ $('.ground').removeClass(cssClass) },
         );
         $('.airMenu').hover(
         
-            // function(){ $('.groundModal').addClass('hilighted') },
-            function(){ $('.air').addClass('hilighted')},
-            function(){ $('.air').removeClass('hilighted') }
+            // function(){ $('.groundModal').addClass(cssClass) },
+            function(){ $('.air').addClass(cssClass)},
+            function(){ $('.air').removeClass(cssClass) }
         );
         $('.towersMenu').hover(
         
-            // function(){ $('.groundModal').addClass('hilighted') },
-            function(){ $('.towers').addClass('hilighted')},
-            function(){ $('.towers').removeClass('hilighted') }
+            // function(){ $('.groundModal').addClass(cssClass) },
+            function(){ $('.towers').addClass(cssClass)},
+            function(){ $('.towers').removeClass(cssClass) }
         );
         $('.spellsMenu').hover(
         
-            // function(){ $('.groundModal').addClass('hilighted') },
-            function(){ $('.spells').addClass('hilighted')},
-            function(){ $('.spells').removeClass('hilighted') }
+            // function(){ $('.groundModal').addClass(cssClass) },
+            function(){ $('.spells').addClass(cssClass)},
+            function(){ $('.spells').removeClass(cssClass) }
         );
         } 
     
-onMouseOverCategory();
+onMouseOverCategory('hilighted');
 
-//when mouse over unit
-function onMouseOverUnit(){
+//add & remove class when mouse hover over unit 
+function onMouseOverUnit(cssClass){
     $('.nav-item').on('mouseenter', event => {
-        $(event.currentTarget).addClass("hilighted"),
+        $(event.currentTarget).addClass(cssClass),
                 
         $(event.currentTarget).animate({
             fontSize: '120%',}, 100);
       });
     
       $('.nav-item').on('mouseleave', event => {
-        $(event.currentTarget).removeClass("hilighted"),  
+        $(event.currentTarget).removeClass(cssClass),  
         $(event.currentTarget).css({
                 color: 'lightcoral',
     
@@ -346,7 +334,7 @@ function onMouseOverUnit(){
              }, 100);
       });
     };
-onMouseOverUnit();
+onMouseOverUnit("hilighted");
 
 
 //search unit autocomplete
